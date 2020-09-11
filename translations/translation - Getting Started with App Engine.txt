@@ -29,6 +29,7 @@ In this lab, you learn how to perform the following tasks:
 2. Initialize App Engine
 -Initialize your App Engine app with your project and choose its region:
 	gcloud app create --project=$DEVSHELL_PROJECT_ID
+-If prompted to confirm the zone, enter the numeric number corresponding to the zone you want.
 -Clone the source code repository for a sample application in the hello_world directory:
 	git clone https://github.com/GoogleCloudPlatform/python-docs-samples
 -Navigate to the source directory:
@@ -48,12 +49,9 @@ In this lab, you learn how to perform the following tasks:
 	pip install  -r requirements.txt
 -Run the application. (Please ignore the warning if any):
 	python main.py
-	********************************
--Preview on port 8080 to preview the application:
-	gp preview $(gp url 8080)
-	************************************
+-In Cloud Shell, click Web preview (Web Preview) > Preview on port 8080 to preview the application.
 -To end the test, return to Cloud Shell and press Ctrl+C to abort the deployed service.
--To verify that the app is not deployed just check if it is running:
+-To verify that the app is not deployed just check if it is running. No browser will be detected if app is not deployed:
 	gcloud app browse
 
 4. Deploy and run Hello World on App Engine.
@@ -66,7 +64,6 @@ In this lab, you learn how to perform the following tasks:
 	gcloud app browse
 	
 5. Disable the application
--In the Cloud Console, on the Navigation menu (Navigation menu), click App Engine > Settings.
--Click Disable application.
--Enter the App ID and click DISABLE.
+-Enter this command:
+	gcloud app versions stop
 -If you refresh the browser window you used to view to the application site, you'll get a 404 error.
